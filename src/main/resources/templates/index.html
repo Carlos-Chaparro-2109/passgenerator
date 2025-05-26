@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="password-generator-wrapper p-4 rounded-4 shadow-lg">
+        <h1 class="text-center mb-4">Generador de Contraseñas</h1>
+
+        <div class="config-section mb-4">
+            <h4 class="text-muted mb-3">Características:</h4>
+
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="upperCase" checked>
+                <label class="form-check-label" for="upperCase">Usar mayúsculas</label>
+            </div>
+
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="numbers" checked>
+                <label class="form-check-label" for="numbers">Usar números</label>
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="symbols" checked>
+                <label class="form-check-label" for="symbols">Usar símbolos especiales</label>
+            </div>
+
+            <div class="mb-4">
+                <label for="length" class="form-label">Cantidad de caracteres:</label>
+                <input type="number" class="form-control" id="length" min="4" max="64" value="12">
+            </div>
+        </div>
+
+        <div class="text-center mb-4">
+            <button class="btn btn-primary btn-lg px-4" id="generateBtn">Generar Contraseña</button>
+        </div>
+
+        <div class="password-display-section">
+            <div class="password-output d-flex align-items-center justify-content-between p-3 rounded-3 mb-3">
+                <span id="passwordOutput" class="password-text">Click generar para crear contraseña</span>
+                <button class="btn btn-outline-secondary btn-sm copy-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar al portapapeles">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

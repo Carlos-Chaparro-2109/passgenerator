@@ -1,0 +1,82 @@
+:root {
+       --primary: #0070f3;
+       --primary-foreground: #ffffff;
+       --secondary: #f5f5f5;
+       --secondary-foreground: #111111;
+       --accent: #0070f3;
+       --accent-foreground: #ffffff;
+       --background: #ffffff;
+       --foreground: #111111;
+       --card: #ffffff;
+       --card-foreground: #111111;
+       --border: #e5e5e5;
+       --input: #f5f5f5;
+       --ring: #0070f3;
+       --radius: 0.5rem;
+       --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+   }
+
+   body {
+       background-color: var(--background);
+       color: var(--foreground);
+       font-family: system-ui, -apple-system, sans-serif;
+   }
+
+   .password-generator-wrapper {
+       background-color: var(--card);
+       border: 1px solid var(--border);
+       max-width: 500px;
+       width: 100%;
+   }
+
+   .password-output {
+       background-color: var(--input);
+       border: 1px solid var(--border);
+       font-family: monospace;
+       font-size: 1.1rem;
+   }
+
+   .password-text {
+       word-break: break-all;
+   }
+
+   .copy-btn {
+       transition: all 0.2s ease;
+   }
+
+   .copy-btn:hover {
+       background-color: var(--accent);
+       color: var(--accent-foreground);
+       border-color: var(--accent);
+   }
+
+   .btn-primary {
+       background-color: var(--primary);
+       border-color: var(--primary);
+       color: var(--primary-foreground);
+   }
+
+   .btn-primary:hover {
+       background-color: var(--accent);
+       border-color: var(--accent);
+   }
+
+   .form-check-input:checked {
+       background-color: var(--primary);
+       border-color: var(--primary);
+   }
+
+   .form-control:focus {
+       border-color: var(--ring);
+       box-shadow: 0 0 0 0.25rem rgb(0 112 243 / 25%);
+   }
+
+   @media (max-width: 576px) {
+       .password-generator-wrapper {
+           margin: 1rem;
+       }
+
+       .password-text {
+           font-size: 0.9rem;
+       }
+   }
