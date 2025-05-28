@@ -9,31 +9,35 @@ document.addEventListener("DOMContentLoaded", () => {
         let symbols = document.getElementById("symbols").checked;
         let length = parseInt(document.getElementById("length").value, 10);
 
-        let config = {
-            upperCase,
-            numbers,
-            symbols,
-            length
-        };
+        if(length<65){
+           let config = {
+                       "length" : length,
+                       "useNumbers" : numbers,
+                       "useUppercase" : upperCase,
+                       "useSymbols" : symbols
+                   };
 
-        fetch("/api/generate", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(config)
-        })
-        .then(res => {
-            if (!res.ok) throw new Error("Error al generar contraseña");
-            return res.text();
-        })
-        .then(password => {
-            passwordOutput.textContent = password;
-        })
-        .catch(err => {
-            console.error(err);
-            passwordOutput.textContent = "Error al generar contraseña.";
-        });
+                   fetch("/api/generate", {
+                       method: "POST",
+                       headers: {
+                           "Content-Type": "application/json"
+                       },
+                       body: JSON.stringify(config)
+                   })
+                   .then(res => {
+                       if (!res.ok) throw new Error("Error al generar contraseña");
+                       return res.text();
+                   })
+                   .then(password => {
+                       passwordOutput.textContent = password;
+                   })
+                   .catch(err => {
+                       console.error(err);
+                       passwordOutput.textContent = "Error al generar contraseña.";
+                   });
+        } else{
+            passwordOutput.textContent = "La Cantidad de caracteres no puede ser mayor a 64!";
+        }
     });
 
     copyBtn.addEventListener("click", () => {
